@@ -1,0 +1,106 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(gapminder)
+```
+
+```{r}
+df %>% head()
+```
+
+```{r}
+df %>% nrow()
+```
+
+```{r}
+gapminder  %>%
+  select(year) %>%
+  unique() %>%
+  nrow()
+```
+```{r}
+gapminder %>%
+  select(year) %>%
+  unique() %>%
+  nrow()
+
+```
+
+```{r}
+gapminder %>%  
+  group_by(year) %>% 
+  summarize( n=n() )
+```
+
+```{r}
+gapminder %>%
+  filter (year == "1952") %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp)) +
+  geom_point()
+
+```
+
+```{r}
+gapminder %>%
+  filter(gdpPercap>90000, year==1952)
+```
+
+```{r}
+gapminder %>%
+  filter(country != "Kuwait",year==1952) %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp)) +
+  geom_point()
+```
+```{r}
+gapminder %>%
+  filter(country != "Kuwait",year==1952) %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp, color=continent)) +
+  geom_point()
+```
+```{r}
+gapminder %>%
+  filter(country != "Kuwait",year==1952) %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp, color=continent, size= pop)) +
+  geom_point()
+```
+```{r}
+gapminder %>%
+  filter(country != "Kuwait",year==1952) %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp, color=continent, size= pop)) +
+  geom_point() 
+```
+
+```{r}
+gapminder %>%
+  filter(country != "Kuwait",year==1952) %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp, color=continent, size= pop)) +
+  geom_point(alpha=0.8) + 
+  theme_minimal()
+```
+```{r}
+library(plotly)
+
+P<- gapminder %>%
+  filter(country != "Kuwait",year==1952) %>%
+  ggplot (aes ( x= gdpPercap, y= lifeExp, color=continent, size= pop)) +
+  geom_point(alpha=0.8) + 
+  theme_minimal() 
+ggplotly(P)
+```
+```{r}
+data <- read.table("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", header=TRUE)
+```
+
+```{r}
+df %>% nrow()
+```
+
+```{r}
+df %>% summary()
+```
+
