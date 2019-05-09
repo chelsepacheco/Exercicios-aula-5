@@ -1,7 +1,0 @@
-"0","library(plotly)"
-"0","P<- gapminder %>%"
-"0","  filter(country != ""Kuwait"",year==1952) %>%"
-"0","  ggplot (aes ( x= gdpPercap, y= lifeExp, color=continent, size= pop)) +"
-"0","  geom_point(alpha=0.8) + "
-"0","  theme_minimal() "
-"0","ggplotly(P)"

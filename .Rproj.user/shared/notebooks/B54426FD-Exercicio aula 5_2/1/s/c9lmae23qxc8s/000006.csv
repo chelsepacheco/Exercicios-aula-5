@@ -1,3 +1,0 @@
-"0","gapminder %>%  "
-"0","  group_by(year) %>% "
-"0","  summarize( n=n() )"

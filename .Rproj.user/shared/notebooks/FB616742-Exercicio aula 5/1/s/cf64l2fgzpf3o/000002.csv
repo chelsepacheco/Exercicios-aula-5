@@ -1,3 +1,0 @@
-"0","df %>% ggplot(aes(x = displ, y = hwy)) + "
-"0","  geom_point() + "
-"0","  facet_wrap(vars(cyl,drv), nrow = 3) "

@@ -1,4 +1,0 @@
-"0","gapminder %>%"
-"0","  filter (year == ""1952"") %>%"
-"0","  ggplot (aes ( x= gdpPercap, y= lifeExp)) +"
-"0","  geom_point()"
